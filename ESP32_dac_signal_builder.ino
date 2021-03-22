@@ -15,7 +15,7 @@ i2s_config_t i2s_config = {
      .communication_format = (i2s_comm_format_t)I2S_COMM_FORMAT_I2S_MSB, //format for I2S
      .intr_alloc_flags = 0, // standard interrupt 
      .dma_buf_count = 2, //number of FIFO buffer
-     .dma_buf_len = 32, //siue of FIFO buffer
+     .dma_buf_len = 32, //size of FIFO buffer
      .use_apll = 0 //PLL synch
 };
 
