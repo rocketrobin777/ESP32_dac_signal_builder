@@ -21,9 +21,9 @@ i2s_config_t i2s_config = {
 
 void setFrequency(double frequency) {
 	int size = sizeof(buf)/8;
-    uint32_t rate = 2*frequency*size; // kill I2S driver 
-    i2s_driver_uninstall((i2s_port_t)0); // edit config 
-    i2s_config.sample_rate = rate;
+    uint32_t rate = 2*frequency*size; // calc sample rate 
+    i2s_driver_uninstall((i2s_port_t)0); // kill I2S driver
+    i2s_config.sample_rate = rate; // edit config 
     i2s_config.dma_buf_len = size; // dma length
     i2s_driver_install((i2s_port_t)0, &i2s_config, 0, NULL); // update config
     i2s_set_sample_rates((i2s_port_t)0, rate);
